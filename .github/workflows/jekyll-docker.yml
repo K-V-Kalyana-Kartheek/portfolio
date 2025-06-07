@@ -1,25 +1,20 @@
-name: Deploy Single HTML from Subfolder
+name: Jekyll site CI
 
 on:
   push:
-    branches:
-      - main
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
-  deploy:
+  build:
+
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Upload only portfolio folder
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: portfolio # 👈 Uploads only the contents of the portfolio/ folder
-
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+    - uses: actions/checkout@v4
+    - name: Build the site in the jekyll/builder container
+      run: |
+        docker run \
+        -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
+        jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
