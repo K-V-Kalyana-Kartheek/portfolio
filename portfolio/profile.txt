@@ -1,0 +1,102 @@
++91 7223836753
+kv.kalyana.kartheek@gmail.com
+D-201/ flat no 201/Anjaiah Nagar
+/Gachibowli/Hyderabad
+C O N T A C T
+Q U A L I T Y E N G I N E E R
+P R O J E C T S
+S K I L L S
+Selenium
+Java
+.Net
+SQL
+Cypress
+Serenity
+Framework Set-Up
+Reporting
+Git
+Cucumber
+Automation Testing
+PalTech
+Project Name: Data Migration Testing
+K V K A L Y A N A K A R T H E E K
+W O R K E X P E R I E N C E
+Job Position - Software engineer
+Role - Quatily Engineer
+Experience - 2 years
+Duration - Feb 2023 - Present
+K V Kalyana Kartheek
+E D U C A T I O N
+Senior Secondary School Sec-10
+(CBSE) :- 5.6
+HIGH SCHOOL:-
+Lendi Institute of Engineering and
+Technology (Autonomous) :-7.5
+(Current)
+BACHELOR OF TECHNOLOGY:-
+INTERMEDIATE:-
+Amresh Sharma Public School
+(CBSE):-5.4
+Description: Developed a Proof of Concept (POC) for a Python-based framework to validate the integrity
+and completeness of data during migration processes. The framework was designed to automate the
+comparison of source and target data within a local database environment, ensuring that all data was
+transferred accurately.
+Key Responsibilities & Achievements:
+Designed and implemented a Python POC framework to automate data migration testing, ensuring
+data integrity within a controlled local database environment.
+Utilized Python’s built-in libraries, such as pandas for data manipulation and openpyxl for Excel file
+handling, to facilitate data extraction and comparison.
+Developed a system to input database credentials via an Excel sheet, enabling the framework to
+dynamically connect to local databases, execute SQL queries, and retrieve relevant data.
+Automated the identification and reporting of lost or mismatched data by exporting discrepancies to a
+separate Excel file, streamlining the testing process.
+Addressed the challenge of identifying Primary Composite Keys, crucial for accurate data comparison
+across complex tables, by implementing advanced query logic.
+Project Name: HRMS Automation
+Description: As a core member of the team, contributed to the development of a robust automation
+framework for an HR Management System (HRMS) to enhance the efficiency of testing processes. This
+project involved writing manual test cases, identifying critical bugs, and creating a comprehensive
+automation solution from scratch using C# and SpecFlow. The framework was integrated with NUnit and
+Cucumber for behavior-driven development (BDD), and included advanced reporting capabilities with
+Extent Reports.
+Key Responsibilities & Achievements:
+Manual Testing: Authored detailed manual test cases to ensure comprehensive coverage of HRMS
+functionalities, leading to the discovery of major bugs, including a critical issue where Leave
+Encashment was not updating when leaves were canceled.
+Framework Design: Designed and developed a custom automation framework from scratch using C#
+and SpecFlow, facilitating efficient and scalable test automation.
+Integration with NUnit and Cucumber: Successfully integrated the framework with NUnit for unit
+testing and Cucumber for BDD, enabling more readable and maintainable test cases.
+Automation of Test Cases: Automated the manual test cases, significantly reducing the time required
+for regression testing and improving overall test accuracy.
+Version Control: Utilized Git for version control, ensuring efficient collaboration and version
+management across the team.
+Enhanced Reporting: Integrated Extent Reports into the framework, with features to automatically
+capture and include screenshots in the report whenever an error occurred, providing detailed and
+actionable insights for faster issue resolution.
+May 2023 - Jul 2023
+Aug 2023 - Jan 2024
+Project Name: Doctor Care Anywhere (DCA)
+Description: Worked on automating existing test scripts for a healthcare company project, enhancing test
+efficiency and framework usability. The project utilized Serenity with Java for test automation, Azure for
+pipeline execution (though not directly involved in deployment), Testrail for test case management, and
+Confluence for documentation. Executed pipelines to ensure smooth test operations and reporting.
+Key Responsibilities & Achievements:
+Suggested Framework Updates: Proposed updates to the automation framework to improve
+reusability and maintainability, ensuring that the framework could be easily reviewed and archived for
+the client.
+Automated Repetitive Tasks: Streamlined manual processes by automating repetitive tasks, improving
+efficiency and reducing manual effort for the team.
+Optimized Pipeline Execution: Reduced pipeline execution time not only through parallel runs but by
+creating independent users to avoid dependencies and enhance execution speed.
+Enhanced Framework Robustness: Collaborated with developers to refine the API interactions, making
+the framework more robust and reliable.
+Created JAR Files: Developed and provided JAR files containing reusable methods, facilitating faster
+development and integration for the team.
+Owned Web Framework: Took full ownership of the Web Framework, including maintenance and
+enhancement.
+Client and Team Training: Conducted training sessions for both the client and internal team on
+framework usage and how to trigger pipelines effectively.
+Met Deadlines and Added Value: Consistently met project deadlines while contributing additional
+enhancements and improvements to the framework and processes
+Feb 2024 - Present
