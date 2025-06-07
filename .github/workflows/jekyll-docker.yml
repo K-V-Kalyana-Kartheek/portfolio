@@ -19,7 +19,7 @@ jobs:
       - name: Upload only portfolio folder
         uses: actions/upload-pages-artifact@v3
         with:
-          path: portfolio/index.html # 👈 Uploads only the contents of the portfolio/ folder
+          path: portfolio # 👈 Uploads only the contents of the portfolio/ folder
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
