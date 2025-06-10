@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Migration Testing | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/datamigration.css">
+</head>
+
+<body>
+    <header>
+        <nav class="nav-container">
+            <div class="project-title">Data Migration Testing</div>
+            <div class="nav-links">
+                <!-- <a href="../index.html#about">About</a> -->
+                <a href="/index.html">Projects</a>
+                <!-- <a href="../index.html#skills">Skills</a> -->
+                <!-- <a href="education.html">Education</a> -->
+            </div>
+
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Data Migration Testing</h1>
+                <p>Ensuring flawless data transitions through automated testing</p>
+            </div>
+        </section>
+
+   <section id="overview" class="container">
+    <h2 class="section-title">Project Overview</h2>
+    <p>
+        Developed a Proof of Concept (POC) for a Python-based framework to validate the integrity and completeness of data during migration processes.
+        The framework was designed to automate the comparison of source and target data within a local database environment, ensuring accurate data transfer.
+    </p>
+
+    <h3 class="section-subtitle">Key Responsibilities & Achievements</h3>
+    <ul class="responsibilities">
+        <li>Designed and implemented a Python POC framework to automate data migration testing, ensuring data integrity within a controlled local database environment.</li>
+        <li>Utilized Python’s built-in libraries such as <code>pandas</code> for data manipulation and <code>openpyxl</code> for Excel file handling.</li>
+        <li>Developed a system to input database credentials via Excel, allowing dynamic connections to local databases and SQL query execution.</li>
+        <li>Automated detection and reporting of data mismatches by exporting discrepancies to a separate Excel file, streamlining testing.</li>
+        <li>Implemented logic to identify Primary Composite Keys, enhancing comparison accuracy for complex tables.</li>
+    </ul>
+</section>
+
+
+        <section id="technologies" class="container">
+            <h2 class="section-title">Technologies Used</h2>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-icon">🐍</div>
+                    <h3>Python</h3>
+                    <p>Core Programming Language</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">📊</div>
+                    <h3>Pandas</h3>
+                    <p>To manipulate and analyze data</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">📑</div>
+                    <h3>OpenPyXL</h3>
+                    <p>Helped in storing the relavent data into excel</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">🗄️</div>
+                    <h3>SQL</h3>
+                    <p>Database Operations</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="container">
+            <h2 class="section-title">Key Features</h2>
+            <ul class="features-list">
+                <li class="feature-item">
+                    <h3>Automated Comparison</h3>
+                    <p>Python framework for seamless source and target database comparison</p>
+                </li>
+                <li class="feature-item">
+                    <h3>SQL Automation</h3>
+                    <p>Automated SQL execution and data extraction capabilities</p>
+                </li>
+                <!-- <li class="feature-item">
+                    <h3>Dynamic Configuration</h3>
+                    <p>Excel-driven configuration for flexible testing parameters</p>
+                </li> -->
+                <li class="feature-item">
+                    <h3>Advanced Key Support</h3>
+                    <p>Robust handling of composite keys and complex data relationships</p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="impact" class="container">
+            <div class="impact">
+                <h2 class="section-title">Project Impact</h2>
+                <div class="impact-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">80%</div>
+                        <p>Reduction in Manual Testing Time</p>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">99.9%</div>
+                        <p>Data Validation Accuracy</p>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <p>Automated Reporting</p>
+                    </div>
+                </div>
+            </div>
+<div class="navigation-container">
+    <a class="arrow left-arrow" href="../html/hrms1.html">HRMS Automation</a>
+    <a class="arrow right-arrow" href="../html/doctor-care-anywhere.html">Doctor Care Anywhere</a>	
+</div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="copyright">
+                <p>© 2024 K V Kalyana Kartheek</p>
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/k-v-kalyana-kartheek-a5514921b/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/K-V-Kalyana-Kartheek" target="_blank">GitHub</a>
+                <a href="portfolio\K V KALYANA KARTHEEK.pdf" class="btn" download>Download Resume</a>
+            
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for scroll animations
+        const sections = document.querySelectorAll('section');
+        const header = document.querySelector('header');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+
+</html>

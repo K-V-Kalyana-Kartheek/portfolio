@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRMS Automation Project | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2A9D8F;
+            --text-color: #2C3E50;
+            --bg-color: #FFFFFF;
+            --secondary-bg: #F8F9FA;
+            --accent-color: #264653;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            background: var(--bg-color);
+            padding: 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: padding 0.3s ease;
+        }
+
+        header.scrolled {
+            padding: 0.75rem 1.5rem;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled .header-content {
+            flex-direction: row;
+            align-items: baseline;
+            justify-content: flex-start;
+            gap: 1rem;
+        }
+
+        .project-title {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+            transition: font-size 0.3s ease, margin 0.3s ease;
+        }
+
+        header.scrolled .project-title {
+            font-size: 1.8rem;
+            margin-bottom: 0;
+        }
+
+        .tagline {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.3s forwards;
+            transition: font-size 0.3s ease;
+        }
+
+        header.scrolled .tagline {
+            font-size: 1rem;
+        }
+        
+        
+    
+        /* Main Content Styles */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+        }
+
+        /* Tools & Technologies */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .tool-card {
+            background: var(--secondary-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Key Contributions */
+        .contributions-list {
+            list-style: none;
+        }
+
+        .contributions-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .contributions-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        /* Achievements Section */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .achievement-card {
+            background: var(--secondary-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Code Snippet */
+        .code-section {
+            background: #1E1E1E;
+            padding: 2rem;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        .code-section pre {
+            color: #E1E1E1;
+            font-family: 'Consolas', monospace;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--accent-color);
+            color: white;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--accent-color);
+        }
+        .project-nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2.5rem 0 0 0;
+}
+
+.nav-btn {
+    display: inline-flex;
+    align-items: center;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 0.9rem 2rem;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(42, 157, 143, 0.12);
+    transition: background 0.3s, transform 0.2s;
+    border: none;
+    outline: none;
+    gap: 0.7rem;
+}
+
+.nav-btn:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px) scale(1.04);
+    color: #fff;
+}
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+
+            .header-content {
+                padding: 1rem;
+            }
+
+            header.scrolled .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .project-title {
+                font-size: 2rem;
+            }
+
+            .tagline {
+                font-size: 1rem;
+            }
+
+            .tools-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .social-links {
+                margin-top: 1rem;
+            }
+
+            .social-links a {
+                margin: 0 0.75rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <h1 class="project-title">HRMS Automation</h1>
+            <p class="tagline">Enhancing HR processes through automation</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="project-overview">
+            <h2 class="section-title">Project Overview</h2>
+            <p>A comprehensive automation framework designed to streamline and enhance HR management processes. This
+                project focuses on implementing robust automated testing solutions for critical HR workflows, ensuring
+                system reliability and reducing manual testing efforts.</p>
+        </section>
+
+        <section id="tools-technologies">
+            <h2 class="section-title">Tools & Technologies</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h3>C#</h3>
+                    <p>Primary Programming Language</p>
+                </div>
+                <div class="tool-card">
+                    <h3>SpecFlow</h3>
+                    <p>BDD Framework</p>
+                </div>
+                <div class="tool-card">
+                    <h3>NUnit</h3>
+                    <p>Testing Framework</p>
+                </div>
+                <div class="tool-card">
+                    <h3>Cucumber</h3>
+                    <p>BDD Tool</p>
+                </div>
+                <div class="tool-card">
+                    <h3>Git</h3>
+                    <p>Version Control</p>
+                </div>
+                <div class="tool-card">
+                    <h3>Extent Reports</h3>
+                    <p>Reporting Tool</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="key-contributions">
+            <h2 class="section-title">Key Contributions</h2>
+            <ul class="contributions-list">
+                <li>Designed and implemented a scalable automation framework using C# and SpecFlow</li>
+                <li>Integrated BDD approach with Cucumber for better collaboration with stakeholders</li>
+                <li>Developed comprehensive test suites for critical HR workflows</li>
+                <li>Implemented robust reporting system using Extent Reports</li>
+                <li>Established CI/CD pipeline for automated test execution</li>
+                <li>Created detailed documentation and maintenance guidelines</li>
+            </ul>
+        </section>
+
+        <section id="achievements">
+            <h2 class="section-title">Achievements & Impact</h2>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <h3>70% Reduction</h3>
+                    <p>in regression testing time through automation</p>
+                </div>
+                <div class="achievement-card">
+                    <h3>95% Coverage</h3>
+                    <p>of critical business workflows during the development phase</p>
+                </div>
+                <div class="achievement-card">
+                    <h3>Report Generation</h3>
+                    <p>Provided detailed reports for better decision making</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="code-snippet">
+            <h2 class="section-title">Framework Snippet</h2>
+            <div class="code-section">
+                <pre>
+using HRMSAutomation.Drivers;
+
+namespace HRMSAutomation.Steps
+{
+    [Binding]
+    public class SettingsPageStepDefinitions
+    {
+        private readonly ScenarioContext _scenarioContext;
+
+        Pages page;
+
+        public SettingsPageStepDefinitions(ScenarioContext scenarioContext)
+        {
+            page = scenarioContext.Get<Pages>("Pages");
+            _scenarioContext = scenarioContext;
+        }
+
+
+        [Then(@"Click The Employee List Button")]
+        public void ThenClickTheEmployeeListButton()
+        {
+            page.SettingsPage.SettingsOrganizationPolicies.ClickEmployeeListButton();
+            page.OrganizationPage.WaitForThePageLoadToComplete(false);
+        }
+
+
+        [Then(@"Validate The Added Policies To The Employees")]
+        public void ThenValidateTheAddedPoliciesToTheEmployees()
+        {
+            page.SettingsPage.SettingsOrganizationPolicies.ValidateThePoliceForEmployees();
+        }
+    }
+
+}
+</pre>
+
+            </div>
+        </section>
+    </main>
+
+    <nav class="project-nav">
+        <a href="doctor-care-anywhere.html" class="nav-btn">
+            <span>&larr;</span> Doctor Care Anywhere
+        </a>
+        <a href="datamigration.html" class="nav-btn">
+            Data Migration Testing <span>&rarr;</span>
+        </a>
+    </nav>
+
+    <footer>
+        <div class="footer-content">
+            <div class="copyright">
+                <p>© 2024 K V Kalyana Kartheek</p>
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/k-v-kalyana-kartheek-a5514921b/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/K-V-Kalyana-Kartheek" target="_blank">GitHub</a>
+                <a href="portfolio\K V KALYANA KARTHEEK.pdf" class="btn" download>Download Resume</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const sections = document.querySelectorAll('section');
+        const header = document.querySelector('header');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        let isScrolled = false;
+
+window.addEventListener('scroll', () => {
+  const header = document.querySelector('header');
+  const scrollY = window.scrollY;
+
+  if (scrollY > 60 && !isScrolled) {
+    header.classList.add('scrolled');
+    isScrolled = true;
+  } else if (scrollY <= 60 && isScrolled) {
+    header.classList.remove('scrolled');
+    isScrolled = false;
+  }
+});
+
+    </script>
+</body>
+
+</html>
